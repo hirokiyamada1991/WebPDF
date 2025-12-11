@@ -1,5 +1,5 @@
 For the Japanese version of this document, see:  
-[日本語版 README](https://github.com/hirokiyamada1991/WebPDF/blob/main/README_JP.md)
+[README_JP.md](<https://github.com/hirokiyamada1991/WebPDF/blob/main/README_JP.md>)
 
 
 # WebPDF
