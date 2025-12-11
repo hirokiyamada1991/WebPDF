@@ -1,3 +1,6 @@
+For the Japanese version of this document, see:  
+[README_JP.md](README_JP.md)
+
 # WebPDF
 
 WebPDF is a browser-based software for X-ray Pair Distribution Function (PDF) analysis.  
