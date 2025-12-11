@@ -1,0 +1,453 @@
+
+/************************* Original css PyScript PDF *****************************/
+#canvas {
+    display: none;
+}
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+/*
+#input-area {
+    float: left;
+    width: 28.28%; 
+    /*width: 360px;
+    height: 100vh;
+    padding: 10px;
+    box-sizing: border-box;
+    border-right: 1px solid black;
+}
+    */
+/*
+#chart-area {
+    float: left;
+    width: 71.72%;
+    height: 100vh;
+    padding: 10px;
+    box-sizing: border-box;
+}
+*/
+/**
+.toolButton2{  
+    width: 10em;
+}
+**/
+.loading { outline: none; border: none; background: transparent }
+
+/************************* End of Original css PyScript PDF *****************************/
+
+/************************* Additional css *****************************/
+body {
+    font-family: "Helvetica Neue",
+      "Arial",
+      "Hiragino Kaku Gothic ProN",
+      "Hiragino Sans",
+      "Meiryo",
+      sans-serif;
+    line-height: 1.5;
+    font-size: 14px;
+  }
+
+/************************* 「ファイルを選択」ボタン *****************************/
+.file-button::file-selector-button {
+    background-color: #17839d;
+    color: #fff;
+    border-color: #fff;
+    border-radius: 5px;
+    padding: 2px 20px;
+    text-decoration: none;
+    font-size: 0.9em;
+  }
+  .file-button::file-selector-button:hover {
+    color: #fff;
+    opacity: 0.8;
+  }
+  .block::file-selector-button {
+    display: block;
+  }
+
+/************************* 「計算する」ボタン *****************************/
+.toolButton2 {
+  background-color: #0693e3;
+  color: #fff;
+  border-color: #fff;
+  border-radius: 5px;
+  padding: 4px 20px;
+  text-decoration: none;
+  font-size: 1em;
+}
+.toolButton2:hover {
+  color: #fff;
+  opacity: 0.8;
+}
+
+/************************* 「Download data」ボタン *****************************/
+.toolButton3 {
+  background-color: #642e7c;
+  color: #fff;
+  border-color: #fff;
+  border-radius: 5px;
+  padding: 4px 20px;
+  text-decoration: none;
+  font-size: 1em;
+}
+.toolButton3:hover {
+  color: #fff;
+  opacity: 0.8;
+}
+
+/************************* 「Save Snapshot」ボタン *****************************/
+.toolButton4 {
+  background-color: #219C90;
+  color: #fff;
+  border-color: #fff;
+  border-radius: 5px;
+  padding: 4px 14px;
+  text-decoration: none;
+  font-size: 1em;
+  margin-left: 10px;
+}
+.toolButton4:hover {
+  color: #fff;
+  opacity: 0.8;
+}
+/************************* 「Load Snapshot」ボタン *****************************/
+.toolButton6 {
+  background-color: #FFB823;
+  color: #fff;
+  border-color: #fff;
+  border-radius: 5px;
+  padding: 4px 14px;
+  text-decoration: none;
+  font-size: 1em;
+  margin-left: 10px;
+}
+.toolButton6:hover {
+  color: #fff;
+  opacity: 0.8;
+}
+
+
+/************************* 「Download all data」ボタン *****************************/
+.toolButton5 {
+  background-color: #D50B8B;
+  color: #fff;
+  border-color: #fff;
+  border-radius: 5px;
+  padding: 4px 13px;
+  text-decoration: none;
+  font-size: 1em;
+}
+.toolButton5:hover {
+  color: #fff;
+  opacity: 0.8;
+}
+
+/************************* text box & text area *****************************/
+/*** disabled text box (large) ***/
+  .textbox-1 {
+    width: 100px;
+    padding: 1px 10px;
+    border: 1px solid #969da3;
+    border-radius: 3px;
+    color: #333;
+    background-color: #dededf;
+    font-size: 1em;
+}
+
+.textbox-1::placeholder {
+    color: #999;
+}
+/*** small text area ****/
+.textbox-2 {
+    width: 55px;
+    padding: 1px 3px;
+    margin: 1px 4px;
+    border: 1px solid #969da3;
+    border-radius: 3px;
+    color: #333;
+    font-size: 1em;
+}
+
+.textbox-2::placeholder {
+    color: #999;
+}
+
+.textbox-3 {
+  width: 70px;
+  padding: 1px 3px;
+  margin: 1px 4px;
+  border: 1px solid #969da3;
+  border-radius: 3px;
+  color: #333;
+  font-size: 1em;
+}
+
+.textbox-3::placeholder {
+  color: #999;
+}
+/*** disabled text box (small) ***/
+  .textbox-4 {
+    width: 55px;
+    padding: 1px 3px;
+    margin: 1px 3px;
+    border: 1px solid #969da3;
+    border-radius: 3px;
+    color: #333;
+    background-color: #dededf;
+    font-size: 1em;
+}
+
+.textbox-4::placeholder {
+    color: #999;
+}
+
+/************************* grid *****************************/
+.container001 { 
+  display: grid; 
+  grid-template-columns: 0.4fr 1.3fr; 
+  grid-template-rows: 0.1fr 2.8fr 0.2fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    "top top"
+    "menu main"
+    "menu footer"; 
+}
+
+.top { grid-area: top; }
+
+.menu { grid-area: menu; }
+
+.footer { grid-area: footer; }
+
+.main { grid-area: main; }
+/************************* End of grid *****************************/
+.top,.menu,.footer,.main {
+padding: 10px;
+}
+
+ .top { 
+  background-color: rgb(250, 250, 250);
+  padding: 5px;
+  /*border-bottom: #969da3;*/
+ }
+
+ .menu { 
+  background-color: rgb(250, 250, 250);
+  border-right: 1px solid #969da3;
+}
+
+.footer { 
+  padding: 10px;
+  background-color: #969da3;
+  color: #fff;
+  font-size: 13px;
+ }
+/*
+ .main {
+background-color: #652e7c1d;
+ }
+*/
+ .top-image{
+  width: 40px;
+  vertical-align: middle;
+  margin-right: 2px;
+}
+
+/************************* box-shadow for menu *****************************/
+.box-shadow {
+  background-color: white;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 1px 16px 5px rgba(223,220,220,0.75);
+  -webkit-box-shadow: 0px 1px 16px 5px rgba(223,220,220,0.75);
+  -moz-box-shadow: 0px 1px 16px 5px rgba(223,220,220,0.75);
+}
+
+/************************* progressbar用 *****************************/
+.progress {
+    height: 80px;
+    width: 80px;
+    margin: 50px auto;
+}
+.progress > svg {
+    height: 100%;
+    display: block;
+}
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.rotating {
+  animation: rotating 2s linear infinite;
+  transform-origin: 50% 50%;
+}
+
+/************************* progressbar2用 *****************************/
+.progress-container {
+  display: none; /* 初期状態では非表示 */
+  padding: 1px;
+  /*
+  position: absolute;
+  top:50%;/*中央寄せ*/
+  /*left: 50%;/*中央寄せ*/
+  /*transform: translate(-50%,-50%);/*中央寄せ（調整）*/
+}
+progress {
+  /*height: 500px;*/
+  background-color: #fff; /* プログレスバーの背景色/-moz- 用 */
+  border-radius: 3px;
+  width: 100%;
+
+}
+::-webkit-progress-bar {
+  background-color: #fff; /* プログレスバーの背景色/-webkit- 用 */
+  border-radius: 3px
+}
+::-webkit-progress-value {
+  background-color: #D50B8B; /* プログレスバーの進捗部分色/-webkit- 用 */
+  border-radius: 3px
+}
+::-moz-progress-bar {
+  background-color: #D50B8B; /* プログレスバーの進捗部分色/-moz- 用 */
+  border-radius: 3px
+}
+
+/************************* progressbar3用 *****************************/
+.progress-container3 {
+  display: none; /* 初期状態では非表示 */
+  padding: 1px;
+  
+  position: absolute;
+  top:80%;/*50% 中央寄せ*/
+  left: 50%;/*50% 中央寄せ*/
+  /*transform: translate(-50%,-50%);中央寄せ（調整）*/
+}
+progress {
+  /*height: 500px;*/
+  background-color: #fff; /* プログレスバーの背景色/-moz- 用 */
+  border-radius: 3px;
+  /*width: 100%;*/
+
+}
+::-webkit-progress-bar {
+  background-color: #fff; /* プログレスバーの背景色/-webkit- 用 */
+  border-radius: 3px
+}
+::-webkit-progress-value {
+  background-color: #D50B8B; /* プログレスバーの進捗部分色/-webkit- 用 */
+  border-radius: 3px
+}
+::-moz-progress-bar {
+  background-color: #D50B8B; /* プログレスバーの進捗部分色/-moz- 用 */
+  border-radius: 3px
+}
+
+/************************* progressbar4用 *****************************/
+.progress-container4 {
+  display: none; /*初期状態では非表示 */
+  padding: 1px;
+  position: absolute;
+  top:50%;/*中央寄せ*/
+  left: 50%;/*中央寄せ*/
+  transform: translate(-50%,-50%);/*中央寄せ（調整）*/
+}
+.circular-progress {
+  --size: 250px;
+  --half-size: calc(var(--size) / 2);
+  --stroke-width: 20px;
+  --radius: calc((var(--size) - var(--stroke-width)) / 2);
+  --circumference: calc(var(--radius) * pi * 2);
+  --dash: calc((var(--progress) * var(--circumference)) / 100);
+  animation: progress-animation 5s linear 0s 1 forwards;
+}
+.circular-progress circle {
+  cx: var(--half-size);
+  cy: var(--half-size);
+  r: var(--radius);
+  stroke-width: var(--stroke-width);
+  fill: none;
+  stroke-linecap: round;
+}
+.circular-progress circle.bg {
+  stroke: #ddd/*transparent*/;
+}
+.circular-progress circle.fg {
+  transform: rotate(-90deg);
+  transform-origin: var(--half-size) var(--half-size);
+  stroke-dasharray: var(--dash) calc(var(--circumference) - var(--dash));
+  transition: stroke-dasharray 0.2s linear 0s;
+  stroke: #D50B8B;
+}
+@property --progress {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0;
+}
+@keyframes progress-animation {
+  from {
+    --progress: 0;
+  }
+  to {
+    --progress: 100;
+  }
+}
+
+
+/************************* progressbar5用 *****************************/
+.progress-container5 {
+ /*  display: none; 初期状態では非表示 */
+  padding: 1px;
+  position: absolute;
+  top:50%;/*中央寄せ*/
+  left: 50%;/*中央寄せ*/
+  transform: translate(-50%,-50%);/*中央寄せ（調整）*/
+}
+:root {
+  --progress-bar-width: 200px;
+  --progress-bar-height: 200px;
+  --font-size: 2rem;
+}
+.circular-progress {
+  width: var(--progress-bar-width);
+  height: var(--progress-bar-height);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.inner-circle {
+  position: absolute;
+  width: calc(var(--progress-bar-width) - 30px);
+  height: calc(var(--progress-bar-height) - 30px);
+  border-radius: 50%;
+  background-color: lightgrey/*transparent*/;
+}
+
+.percentage {
+  position: relative;
+  font-size: var(--font-size);
+  color: rgb(0, 0, 0, 0.8)/*transparent*/;
+}
+
+@media screen and (max-width: 800px) {
+  :root {
+    --progress-bar-width: 150px;
+    --progress-bar-height: 150px;
+    --font-size: 1.3rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  :root {
+    --progress-bar-width: 120px;
+    --progress-bar-height: 120px;
+    --font-size: 1rem;
+  }
+}

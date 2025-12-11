@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+    <head prefix="og: http://ogp.me/ns#">
+        <!-- 文字コード・画面表示の設定 -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Favicon-->
+        <link rel="icon" href="assets/images/favicon.ico"> 
+        <link rel="apple-touch-icon" href="assets/images/apple-touch-icon-180x180.png" type="image/png">
+        <link rel="icon" href="assets/images/icon-192x192.png" type="image/png">
+        <!-- GOOGLE FONT -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+
+    <!-- bokeh scripts -->
+        <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-3.2.2.min.js"></script>
+        <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-gl-3.2.2.min.js"></script>
+        <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-3.2.2.min.js"></script>
+        <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-tables-3.2.2.min.js"></script>
+        <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-mathjax-3.2.2.min.js"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+         
+    <!-- meta http-equiv="Content-Type" content="text/html; charset=UTF-8" -->
+    
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <!-- PyScript CSS -->
+        <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">  
+        <!-- This script tag bootstraps PyScript -->
+        <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+        <!-- My CSSの読み込み-->
+        <link rel="stylesheet" href="assets/css/stylesheet.css">
+        <!-- for splashscreen -->
+        <title>PyScript PDF</title>   
+
+    </head>
+
+<body>
+    <dialog id="loading">
+        <h1>Loading...</h1>
+    </dialog>
+<section class="pyscript">
+
+    <div class="container001">
+        <div class="top">
+            <img class="top-image pe-3" src="assets/images/PyS-icon.png" alt="logo">
+            <span style="font-size: large;">PDF Fast Fourier Transform Fitting Module</span>
+        </div>
+        <div class="menu">
+            <div class="box-shadow">
+                Select File:<span id="select_file">_</span><br>
+                <input type="file" id="file-upload" name="myfile" class="file-button"><br>
+                <span style="margin-left: 2px;">select column</span>
+                <input  id="select_upload" type="number" name="tentacles" min="0" max="0" value="0" step="1" class="textbox-2">
+                /
+                <input  id="select_max" type="number" value="0" name="tentacles" disabled class="textbox-4">
+                <br>
+                Select background File:<span id="select_background_file">_</span><br>
+                <input type="file" id="bg-upload" name="myfile" class="file-button"><br>
+
+                <span style="margin-left: 2px;">select column</span>
+                <input  id="select_bg" type="number" name="tentacles" min="0" max="0" value="0" step="1" class="textbox-2">
+                /
+                <input  id="select_bg_max" type="number" value="0" name="tentacles" disabled class="textbox-4">
+                <br>
+                
+                
+                
+                Background Factor<input  id="bg_factor" type="number" name="tentacles" value="1" step="0.1" class="textbox-2">
+            </div>
+            <div class="box-shadow">
+                Select Config:<br>
+                <input type="file" id="upload-config" name="myconfig" class="file-button"><br>
+                atomic number<br>
+                <input  id="atom_no" type="text" value="14, 8" name="tentacles" disabled class="textbox-1"><br>
+                atomic concentration<br>
+                <input  id="atom_conc" type="text" value="1.0, 2.0" name="tentacles" disabled class="textbox-1">
+            </div>
+            <div class="box-shadow">
+            Enrgy<input  id="enrgy" type="number" name="tentacles" min="0" max="500" value="112.8" step="0.01" class="textbox-2">keV<br>
+            Density of sample<input  id="density" type="number" name="tentacles" min="0" max="100" value="0.065" step="0.001" class="textbox-2"> atm/A<sup>3</sup><br>
+            Polarization Factor<input id="polarize_f" type="number" name="tentacles" min="0" max="100" value="0.65" step="0.01" class="textbox-2"><br> 
+            Recoil Factor<input  id="recoil_f" type="number" name="tentacles" min="0" max="100" value="1.0" step="0.01" class="textbox-2"><br>  
+            Fititng to Scatterring Factor with Q range<br>
+            Between<input  id="q_range1" type="number" name="tentacles" min="0" max="100" value="15" step="0.1" class="textbox-2">
+            and<input  id="q_range2" type="number" name="tentacles" min="0" max="100" value="23.8" step="0.1" class="textbox-2"> A<sup>-1</sup><br> 
+            <button class="toolButton2" py-click="clicked_calc_of_s">Calculation of S(Q) </button>
+            </div>
+            <div class="box-shadow">
+            Windows Function
+            <select class="textbox-3">
+                <option value="Lorch">Lorch</option>
+                <option value="b">b</option>
+                <option value="c">c</option>
+            </select><br>
+            r Max<input  id="max" type="number" name="tentacles" min="0" max="100" value="10" step="1" class="textbox-2"><br>
+            delta-r<input  id="d_r" type="number" name="tentacles" min="0" max="100" value="0.01" step="0.01" class="textbox-2"><br>
+            Cut off Distance<input  id="cut_off" type="number" name="tentacles" min="0" max="100" value="1.3" step="0.1" class="textbox-2"> A<br>
+            <button class="toolButton2" py-click="clicked_calc_of_g">Calculation of G(r)</button>
+            </div>
+            Snapshot
+            <button class="toolButton4" py-click="clicked_save">Save</button>
+            <button class="toolButton6" py-click="clicked_load">Load</button>
+            
+            <div class="box-shadow">
+            <span style="font-size: medium;">Data Download</span><br>
+                Select data and download
+
+                <table style="border-collapse: collapse; width: 100%; table-layout: fixed; background-color: #ead7ed; margin-bottom: 5px;">
+                <tbody>
+                <tr>
+                <td><input type="checkbox" id="checkbox1" name="G(r)" checked="" value="">G(r)</td>
+                <td><input type="checkbox" id="checkbox2" name="G(r)_bFT           ">G(r)_bFT      </td>
+                <td><input type="checkbox" id="checkbox3" name="G(r)_Lorch         ">G(r)_Lorch    </td>
+                </tr>
+                <tr>
+                <td><input type="checkbox" id="checkbox4" name="g(r)                ">g(r)          </td>
+                <td><input type="checkbox" id="checkbox5" name="g(r)_bFT            ">g(r)_bFT      </td>        
+                <td><input type="checkbox" id="checkbox6" name="g(r)_Lorch          ">g(r)_Lorch    </td>
+                </tr>
+                <tr>
+                <td><input type="checkbox" id="checkbox7" name="T(r)                ">T(r)          </td>        
+                <td><input type="checkbox" id="checkbox8" name="T(r)_bFT            ">T(r)_bFT      </td>
+                <td><input type="checkbox" id="checkbox9" name="T(r)_Lorch          ">T(r)_Lorch    </td>
+                </tr>
+                <tr>
+                <td><input type="checkbox" id="checkbox10" name="RDF                  ">RDF         </td>
+                <td><input type="checkbox" id="checkbox11" name="RDF_bFT              ">RDF_bFT     </td>
+                <td><input type="checkbox" id="checkbox12" name="RDF_Lorch            ">RDF_Lorch   </td>     
+                </tr>
+                </tbody>
+                </table>
+
+                <table style="border-collapse: collapse; width: 100%; table-layout: fixed; background-color: #d2cad7; margin-bottom: 5px;">
+                <tbody>
+                <tr>
+                <td><input type="checkbox" id="checkbox13" name="iQ        ">iQ    </td>
+                <td><input type="checkbox" id="checkbox14" name="iQ_bFT    ">iQ_bFT</td>    
+                </tr>
+                <tr>
+                <td><input type="checkbox" id="checkbox15" name="SQ        ">SQ    </td>
+                <td><input type="checkbox" id="checkbox16" name="SQ_bFT    ">SQ_bFT</td>
+                </tr>
+                </tbody>
+                </table>
+                <button class="toolButton3" py-click="clicked_dl">Download data</button>
+                <button class="toolButton5" onclick="animation()">Calculate all data</button>
+                <div class="progress-container"><label for=""><progress max="100" value="0" id="progress"></progress></label>
+                <p style="margin: 1px" id="progressResult"></p>
+                </div>
+            </div>
+
+            <div id="load_engine"></div>
+
+        </div>
+        <div class="main">
+            <div id="chart-area">
+                <h2></h2>
+                <table>
+                <tbody>
+                <tr>
+                <td id="mpl"></td>
+                <td id="mpl2"></td>
+                </tr>
+                <tr>
+                <td id="mpl3"></td>
+                <td id="mpl4"></td>
+                </tr>
+                </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="footer">
+            This is free software. We believe this is useful for reseachers who would like to conduct X-ray PDF analysis but NO WARRANTY.<br>
+            Originally developed by Hiroki Yamada (SPring-8, h_yamada@spring8.or.jp) and Koji Ohara (Shimame Univ.)<br>
+            Web Engine is built by SPring-8 Service co., Ltd.<br>
+
+            <small>&copy;2025 Ver 0.5</small>
+            
+            <!--
+            put credit here<br>
+            put credit here<br>
+            put credit here<br>
+            <small>&copy;2024 Ohara Lab. V1.1</small>
+        
+            -->
+        </div>
+    </div>
+</section>
+    <script type="py" src="./main.py"  config="./pyscript.toml">
+    </script>
+    <script type="module">
+        const loading = document.getElementById('loading');
+        addEventListener('py:ready', () => loading.close());
+        loading.showModal();
+    </script>
+
+<script>
+const progress = document.querySelector("#progress");
+const progressResult = document.querySelector("#progressResult");
+// progressbar2
+const progressContainer = document.querySelector('.progress-container');
+
+// 進捗の値
+let percentage;
+textFormat: 'percent'
+
+// 進捗状況の数字を増やす関数
+function increment() {
+  percentage += 1;
+  // 進捗に+1することをprogressのvalueにも入れる
+  progress.value = percentage;
+  progressResult.innerHTML = progress.value;
+}
+
+// ボタンを押したときに発動する関数
+function animation() {
+    progressContainer.style.display = 'block'; // ボタンクリックで表示
+　// 進捗状況の値をprogressのvalueの値に上書きする(初期値はHTML側でvalue=0としてある)
+  percentage = progress.value;
+  setInterval("increment()", 100);
+  console.log(progress.value);
+}
+</script>
+    
+</body>
+</html>

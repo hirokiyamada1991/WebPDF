@@ -1,0 +1,14 @@
+{ "Density":0.066,
+  "Polarization Factor":0.56,
+  "Recoil Factor":1.16,
+  "Q range from":16,
+  "Q range to":23.7,
+  "r Max" : 10.1,
+  "delta-r":0.01, 
+  "Cut off Distance":1.41,
+  "energy_of_X-ray" : 113.0,
+  "atomNo[List]": "14, 8",
+  "atomConc": "1.0, 2.0" 
+}
+
+

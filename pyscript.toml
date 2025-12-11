@@ -1,0 +1,129 @@
+
+
+name = "PyScript PDF"
+
+packages = ["warn","h5py", "numpy","matplotlib","scipy", "sympy","bokeh==3.2.2", "xyzservices"]
+
+[files]
+"./calc_pdf.py" ="" 
+"./globalsv.py" ="" 
+"./data.xy" =""
+"./data.h5" =""
+"./bg.xy" =""
+"./dl.zip" =""
+"./clc_img.png" = ""
+
+[[fetch]]
+files = ['./f1f2_1.dat', 
+        './f1f2_2.dat', 
+        './f1f2_3.dat', 
+        './f1f2_10.dat', 
+        './f1f2_11.dat',
+        './f1f2_12.dat',
+        './f1f2_13.dat',
+        './f1f2_14.dat',
+        './f1f2_15.dat',
+        './f1f2_16.dat',
+        './f1f2_17.dat',
+        './f1f2_18.dat',
+        './f1f2_19.dat',
+        './f1f2_20.dat',
+        './f1f2_21.dat',
+        './f1f2_22.dat',
+        './f1f2_23.dat',
+        './f1f2_24.dat',
+        './f1f2_25.dat',
+        './f1f2_26.dat',
+        './f1f2_27.dat',
+        './f1f2_28.dat',
+        './f1f2_29.dat',
+        './f1f2_30.dat',
+        './f1f2_31.dat',
+        './f1f2_32.dat',
+        './f1f2_33.dat',
+        './f1f2_34.dat',
+        './f1f2_35.dat',
+        './f1f2_36.dat',
+        './f1f2_37.dat',
+        './f1f2_38.dat',
+        './f1f2_39.dat',
+        './f1f2_40.dat',
+        './f1f2_41.dat',
+        './f1f2_42.dat',
+        './f1f2_43.dat',
+        './f1f2_44.dat',
+        './f1f2_45.dat',
+        './f1f2_46.dat',
+        './f1f2_47.dat',
+        './f1f2_48.dat',
+        './f1f2_49.dat',
+        './f1f2_4.dat',
+        './f1f2_50.dat',
+        './f1f2_51.dat',
+        './f1f2_52.dat',
+        './f1f2_53.dat',
+        './f1f2_54.dat',
+        './f1f2_55.dat',
+        './f1f2_56.dat',
+        './f1f2_57.dat',
+        './f1f2_58.dat',
+        './f1f2_59.dat',
+        './f1f2_5.dat',
+        './f1f2_60.dat',
+        './f1f2_61.dat',
+        './f1f2_62.dat',
+        './f1f2_63.dat',
+        './f1f2_64.dat',
+        './f1f2_65.dat',
+        './f1f2_66.dat',
+        './f1f2_67.dat',
+        './f1f2_68.dat',
+        './f1f2_69.dat',
+        './f1f2_6.dat',
+        './f1f2_70.dat',
+        './f1f2_71.dat',
+        './f1f2_72.dat',
+        './f1f2_73.dat',
+        './f1f2_74.dat',
+        './f1f2_75.dat',
+        './f1f2_76.dat',
+        './f1f2_77.dat',
+        './f1f2_78.dat',
+        './f1f2_79.dat',
+        './f1f2_7.dat',
+        './f1f2_80.dat',
+        './f1f2_81.dat',
+        './f1f2_82.dat',
+        './f1f2_83.dat',
+        './f1f2_8.dat',
+        './f1f2_92.dat',
+        './f1f2_9.dat',
+        './f1f2_Sasaki.dat']
+from  = './sasakif1f2/'
+to_folder = './'
+
+[[fetch]]
+files = ['Compton.txt', 'FormFactor.txt']
+from  = './x-ray/'
+to_folder = './'
+
+[[fetch]]
+ files = ['gg_r.dat', 
+          'gg_r_bft.dat', 
+          'gg_r_lorch.dat', 
+          'g_r.dat', 
+          'g_r_bft.dat', 
+          'g_r_lorch.dat', 
+          'iq.dat', 
+          'iq_bft.dat', 
+          'rdf.dat', 
+          'rdf_bft.dat', 
+          'rdf_lorch.dat', 
+          'sq.dat', 
+          'sq_bft.dat', 
+          't_r.dat', 
+          't_r_bft.dat', 
+          't_r_lorch.dat']
+
+from  = './dl/'
+to_folder = './'
